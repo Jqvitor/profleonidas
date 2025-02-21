@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Site de Notícias</title>
+    <style>
+        /* Geral */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Cabeçalho */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1476e1;
+            padding: 10px 20px;
+            color: white;
+            height: 80px;
+        }
+
+        .logo {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 350px; /* Aumentado */
+            max-height: 400px; /* Aumentado */
+            object-fit: contain;
+            position: relative;
+            top: 20px; /* Ajustado para ficar mais visível */
+        }
+
+        /* Menu Hamburguer */
+        .menu {
+            position: relative;
+        }
+
+        .hamburger {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .hamburger.active {
+            transform: rotate(90deg);
+        }
+
+        .navMenu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 10px;
+            background-color: #1476e1;
+            padding: 10px;
+            width: 200px;
+            border-radius: 0 0 10px 10px;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .navMenu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navMenu li {
+            margin: 10px 0;
+        }
+
+        .navMenu li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .navMenu li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Home */
+        .home {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .home h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .home p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Banner */
+        .banner {
+            width: 170%;
+            height: 80vh; /* Agora ocupa toda a altura da tela */
+            background-image: url('logo.png.png'); /* Nome correto da imagem */
+            background-size: cover; /* Faz a imagem cobrir toda a tela */
+            background-position: center center; /* Centraliza a imagem */
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #1476e1;
+            color: white;
+            padding: 30px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .footerContent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .footerLogo img {
+            max-width: 150px;
+        }
+
+        .socialFooter {
+            display: flex;
+            gap: 20px;
+        }
+
+        .socialFooter a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+        }
+
+        .socialFooter a:hover {
+            color: #ffcc00;
+        }
+
+        .contactInfo {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .socialFooter a img {
+            max-width: 20px; /* Ajuste esse valor para o tamanho desejado */
+            height: auto;
+        }
+
+        .footerNav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footerNav a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        .footerNav a:hover {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <div id="navMenu" class="navMenu">
+                <ul>
+                    <li><a href="home.html" onclick="closeMenu()">Home</a></li>
+                    <li><a href="index.html" onclick="closeMenu()">Notícias</a></li>
+                    <li><a href="sobre.html" onclick="closeMenu()">Sobre</a></li>
+                    <li><a href="contato.html" onclick="closeMenu()">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="logobranca.png" alt="Logo do Site">
+        </div>
+    </header>
+
+    <main>
+        <section class="home">
+            <h1>Bem-vindo ao Site de Notícias do Professor Leônidas</h1>
+            <p>Este site foi criado com um propósito muito claro: promover a transparência total nas ações da Câmara de Vereadores de Esperantina. Criado pelo Professor Leônidas Quaresma de Carvalho, o site tem o objetivo de informar a população sobre os acontecimentos e decisões da câmara, garantindo que os vereadores ajam com responsabilidade e que suas ações sejam visíveis para todos. Através dessa plataforma, buscamos manter uma comunicação aberta com os cidadãos, permitindo que acompanhem os processos e a atuação do legislativo local.</p>
+            <p>Acreditamos que, com a transparência, a confiança na política se fortalece e a população se torna mais ativa e participativa na construção de uma cidade melhor.</p>
+        </section>
+
+        <!-- Banner com logo.png.png -->
+        <div class="banner">
+            <p></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footerContent">
+            <div class="socialFooter">
+                <a href="https://www.instagram.com/vereador_professorleonidas?igsh=bDdpZTVlcWU1dTRv" target="_blank">
+                    <img src="instagram-icon.png" alt="Instagram"> Instagram
+                </a>
+                <a href="https://www.facebook.com/share/1BqY9erYir/" target="_blank">
+                    <img src="facebook-icon.png" alt="Facebook"> Facebook
+                </a>
+                <a href="https://wa.me/86999886775" target="_blank">
+                    <img src="whatsapp-icon.png" alt="WhatsApp"> WhatsApp
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.getElementById("navMenu");
+            const menuLinks = document.querySelectorAll(".navMenu a");
+    
+            function toggleMenu() {
+                const isOpen = navMenu.style.display === "block";
+                navMenu.style.display = isOpen ? "none" : "block";
+                hamburger.classList.toggle("active", !isOpen);
+            }
+    
+            function closeMenu() {
+                navMenu.style.display = "none";
+                hamburger.classList.remove("active");
+            }
+    
+            hamburger.addEventListener("click", toggleMenu);
+            menuLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    setTimeout(closeMenu, 200);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

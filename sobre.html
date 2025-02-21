@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Site de Notícias</title>
+    <style>
+        /* Reset Geral */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+         /* Cabeçalho */
+         header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1476e1;
+            padding: 10px 20px;
+            color: white;
+            height: 80px;
+        }
+
+        .logo {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 350px;
+            max-height: 400px;
+            object-fit: contain;
+            position: relative;
+            top: 40px; /* Ajuste para descer a logo */
+        }
+        
+        /* Menu Hamburguer */
+        .menu {
+            position: relative;
+        }
+
+        .hamburger {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .hamburger.active {
+            transform: rotate(90deg);
+        }
+
+        .navMenu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 10px;
+            background-color: #1476e1;
+            padding: 10px;
+            width: 200px;
+            border-radius: 0 0 10px 10px;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .navMenu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navMenu li {
+            margin: 10px 0;
+        }
+
+        .navMenu li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .navMenu li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Sobre */
+        .about {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .about h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        /* Biografia */
+        .biography {
+            padding: 100px 20px 20px;
+            text-align: center;
+            background: #fff;
+            position: relative;
+        }
+
+        .biography h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .biography p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            animation: slideUp 1s ease-out;
+        }
+
+        
+
+        /* Carrossel de Imagens */
+        .carousel {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .carousel img {
+            width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #1476e1;
+            color: white;
+            padding: 30px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .footerContent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .footerLogo img {
+            max-width: 300px;
+        }
+
+        .socialFooter {
+            display: flex;
+            gap: 20px;
+        }
+
+        .socialFooter a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+        }
+
+        .socialFooter a:hover {
+            color: #ffcc00;
+        }
+
+        .contactInfo {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .footerNav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .socialFooter a img {
+            max-width: 20px; /* Ajuste esse valor para o tamanho desejado */
+            height: auto;
+        }
+
+        .footerNav a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        .footerNav a:hover {
+            color: #ffcc00;
+        }
+
+        
+
+            /* Menu Hamburguer */
+            .navMenu {
+                width: 100%;
+                top: 70px;
+                left: 0;
+            }
+
+            .navMenu ul {
+                padding: 20px;
+            }
+
+            .navMenu li {
+                margin: 15px 0;
+            }
+
+            /* Ajuste da biografia */
+            .biography {
+                padding: 50px 15px 15px;
+            }
+
+            .timeline .timeline-item {
+                width: 100%;
+                padding: 15px;
+                margin-bottom: 30px;
+            }
+
+            .timeline .timeline-item.left,
+            .timeline .timeline-item.right {
+                left: 0;
+            }
+
+            .carousel {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .carousel img {
+                width: 90%; /* Fazendo as imagens do carrossel se ajustarem à tela */
+                margin-bottom: 15px;
+            }
+
+            .footerContent {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .socialFooter {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .contactInfo {
+                text-align: center;
+            }
+        
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="menu">
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <div id="navMenu" class="navMenu">
+                <ul>
+                    <li><a href="home.html" onclick="closeMenu()">Home</a></li>
+                    <li><a href="index.html" onclick="closeMenu()">Notícias</a></li>
+                    <li><a href="sobre.html" onclick="closeMenu()">Sobre</a></li>
+                    <li><a href="contato.html" onclick="closeMenu()">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="logobranca.png" alt="Logo do Site">
+        </div>
+    </header>
+
+    <main>
+        <section class="about">
+            <h1>Sobre o Vereador Professor Leõnidas</h1>
+            <p> <h2>Conheça mais sobre o Professor Leônidas.</h2>
+                <p><strong>Filho de:</strong> Leônidas Quaresma de Carvalho (Comerciante) e Lina Santos Quaresma (Professora aposentada da rede estadual de ensino do Piauí);</p>
+        <p><strong>Casado com:</strong> Lusinete Ribeiro de Carvalho (Professora e ex-vereadora);</p>
+        <p><strong>Filhos:</strong> Regina Flávia Ribeiro de Carvalho Castro (Advogada e servidora pública), Márcia Cristina Ribeiro de Carvalho (Advogada e servidora pública), Henrique Samuel Ribeiro de Carvalho (Advogado e servidor público), Katiele da Silva Santos, Sabrina Silva Santos e Beatriz Silva Santos;</p>
+        <p><strong>Irmãos:</strong> Fábio Santos Quaresma (Professor), Nailde Santos Quaresma Teles (Professora), Irenilde Santos Quaresma Chaves (Professora), José Roberto Santos Quaresma (Autônomo), Joel Santos Quaresma (Servidor Público - Vigia), Joélia Santos Quaresma Araújo (Professora, Assistente social e técnica em enfermagem), Mário Santos Quaresma (Major inativo da Polícia Militar do DF), Francisco Bernardo Santos Quaresma (Professor e empresário) e Maria Cristina Quaresma Queiroz (Professora e empresária);</p>
+    </div>
+        </section>
+  
+
+    <section class="biography" id="sobre">
+        <h1>Biografia do Dono</h1>
+
+        <div class="timeline">
+            <div class="timeline-container">
+                <div class="timeline-item left visible">
+                    <img src="fotobio1.jpeg" alt="Foto antiga 1" width="300">
+                    <h2>1993: Início na Política</h2>
+                    <p>Em 1993 professor Leônidas foi eleito pela primeira vez como vereador de Esperantina com 419 votos.</p>
+                </div>
+                <div class="timeline-item right visible">
+                    <img src="fotobio2.jpeg" alt="Foto atual 1" width="300">
+                    <h2>Sua vida profissional.</h2>
+                    <ul>
+                        <li><strong>Professor concursado da rede estadual de ensino do Piauí</strong> no período de 1987 a 2017. Ministrou aulas nas Unidades Escolares: Umbelino, Hermínio Castelo Branco, Estado da Paraíba, Petrônio Portela e José Nogueira de Aguiar.</li>
+                        <li><strong>Vereador pelo Município de Esperantina PI</strong> nas legislaturas 1993 a 1996, 1997 a 2000 e 2017 a 2020.</li>
+                        <li><strong>Professor concursado na Rede Municipal de Ensino da cidade de Esperantina-PI</strong> desde 1999.</li>
+                        <li><strong>Advogado - Seccional Piauí.</strong></li>
+                    </ul>
+                </div>
+                <div class="timeline-item left visible">
+                    <img src="fotonovabio1.jpeg" alt="Foto antiga 2" width="300">
+                    <h2>Além de professor, Advogado!</h2>
+                    <p>Deu início a sua carreira de advogado em 2023, iniciando seu escritório de advocacia. Segue até hoje na área, ampliando seus conhecimentos.</p>
+                </div>
+                <div class="timeline-item right visible">
+                    <img src="fotobio10.jpeg" alt="Foto atual 2" width="300">
+                    <h2>2025: Início do quarto Mandato</h2>
+                    <p>Inicia seu quarto mandato em 2025. Buscando sempre o melhor para a cidade e para a população de Esperantina.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="socialFooter">
+        <a href="https://www.instagram.com/vereador_professorleonidas?igsh=bDdpZTVlcWU1dTRv" target="_blank">
+            <img src="instagram-icon.png" alt="Instagram"> Instagram
+        </a>
+        <a href="https://www.facebook.com/share/1BqY9erYir/" target="_blank">
+            <img src="facebook-icon.png" alt="Facebook"> Facebook
+        </a>
+        <a href="https://wa.me/86999886775" target="_blank">
+            <img src="whatsapp-icon.png" alt="WhatsApp"> WhatsApp
+        </a>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.getElementById("navMenu");
+        const menuLinks = document.querySelectorAll(".navMenu a");
+
+        function toggleMenu() {
+            const isOpen = navMenu.style.display === "block";
+            navMenu.style.display = isOpen ? "none" : "block";
+            hamburger.classList.toggle("active", !isOpen);
+        }
+
+        function closeMenu() {
+            navMenu.style.display = "none";
+            hamburger.classList.remove("active");
+        }
+
+        hamburger.addEventListener("click", toggleMenu);
+        menuLinks.forEach(link => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        // Lazy Loading de Imagens
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deixar Comentário - Site de Notícias</title>
+    <style>
+        /* O CSS foi melhorado para uma interface mais agradável */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header, footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1476e1;
+            padding: 10px 20px;
+            color: white;
+            height: 80px;
+        }
+
+        .logo img {
+            max-width: 350px; /* Aumentado */
+            max-height: 400px; /* Aumentado */
+            object-fit: contain;
+            position: relative;
+            top: 20px; /* Ajustado para ficar mais visível */
+        }
+        .logo-controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .footerContent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .socialFooter a img {
+            max-width: 20px;
+            height: auto;
+        }
+
+        /* Estilo do conteúdo principal */
+        .content {
+            padding: 20px;
+            background-color: white;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #1476e1;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Rodapé */
+        footer {
+            margin-top: auto;
+            padding: 20px 0;
+            background-color: #1476e1;
+            color: white;
+            text-align: center;
+        }
+
+        .footerLogo img {
+            max-width: 30px;
+        }
+
+        .socialFooter {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .socialFooter a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .socialFooter a:hover {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="logobranca.png" alt="Logo do Site">
+        </div>
+    </header>
+
+    <!-- Formulário de Comentários -->
+    <main>
+        <section class="content">
+            <h2>Deixe seu Comentário</h2>
+            <form action="https://wa.me/86999886775" method="get" target="_blank">
+                <input type="text" name="name" placeholder="Seu Nome" required>
+                <textarea name="message" placeholder="Seu Comentário" required></textarea>
+                <button type="submit">Enviar Comentário</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        
+
+            <div class="socialFooter">
+                <a href="https://www.instagram.com/vereador_professorleonidas?igsh=bDdpZTVlcWU1dTRv" target="_blank">
+                    <img src="instagram-icon.png" alt="Instagram"> Instagram
+                </a>
+                <a href="https://www.facebook.com/share/1BqY9erYir/" target="_blank">
+                    <img src="facebook-icon.png" alt="Facebook"> Facebook
+                </a>
+                <a href="https://wa.me/86999886775" target="_blank">
+                    <img src="whatsapp-icon.png" alt="WhatsApp"> WhatsApp
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
