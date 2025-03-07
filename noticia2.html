@@ -234,7 +234,7 @@
             </div>
         </div>
         <div class="logo">
-            <img src="logobranca.png" alt="Logo do Site">
+            <img src="https://wa.me/8699724253" alt="Logo do Site">
         </div>
     </header>
 
@@ -276,7 +276,7 @@
         
             <!-- Botões de Interação -->
             <div class="buttons">
-                <button onclick="window.open('https://wa.me/86999886775?text=Confira%20a%20not%C3%ADcia%20aqui:%20http://seusite.com/noticia1.html', '_blank')">Compartilhar no WhatsApp</button>
+                <button onclick="compartilharWhatsApp()">Compartilhar no WhatsApp</button>
                 <button onclick="window.open('https://www.instagram.com/?url=http://seusite.com/noticia1.html', '_blank')">Compartilhar no Instagram</button>
                 <button onclick="window.location.href='comentario.html'">Deixar um Comentário</button>
             </div>
@@ -304,7 +304,12 @@
             </a>
         </div>
     </footer>
-
+    <script>
+        function compartilharWhatsApp() {
+            const url = window.location.href; // Obtém a URL da página atual
+            window.open(`https://wa.me/?text=${encodeURIComponent(url)}`, '_blank');
+        }
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const hamburger = document.querySelector(".hamburger");
